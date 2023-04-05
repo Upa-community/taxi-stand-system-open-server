@@ -4,34 +4,25 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  laravel-tests:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
 
     steps:
-     - name: Public IP Install
-       id: ip
-       uses: haythem/public-ip@v1.2
+    - uses: actions/checkout@v2
+    - name: Directory Permissions
+      run: chmod -R 777 storage bootstrap/cache
 
-     - name: Checkout
-       uses: actions/checkout@v2
-       
-     - name: AWS CLI install
-       run: |
-         curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-         unzip awscliv2.zip
-         sudo ./aws/install --update
-         aws --version
-
-     - name: AWS set Credentials
-       uses: aws-actions/configure-aws-credentials@v1
-       with:
-         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
-         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-         aws-region: ap-northeast-3
-
-     - name: Deploy
-       run: |
-         echo "${{ secrets.GIT_PRIVATE_KEY }}" > private_key
-         chmod 600 private_key
-         ssh -oStrictHostKeyChecking=no ${{ secrets.EC2_USER_NAME }}@${{ secrets.EC2_HOST_NAME }} -i private_key "cd /var/www && git checkout main && git pull origin main && composer install"
+  deploy:
+    if: github.ref == 'refs/heads/master'
+    needs: laravel-tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy
+        env:
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+          USER_NAME: ${{ secrets.USER_NAME }}
+          HOST_NAME: ${{ secrets.HOST_NAME }}
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOST_NAME} 'cd /var/www && git checkout main && git pull origin main'
