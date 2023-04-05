@@ -189,7 +189,7 @@
             <div class="container">
                 <div class="row gy-4">
                     <div class="col-md-4">
-                        <h4 class="text-white">フッタータイトル</h4>
+                        <h4 class="text-white">フッター</h4>
                     </div>
                     <div class="col-md-2">
                         <h5 class="text-white">Brand</h5>
