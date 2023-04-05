@@ -106,7 +106,7 @@
                         </div>
                         <h5 class="mt-4 mb-2">混雑度</h5>
                         <p>
-                            グラフで可視化する。
+                            グラフで可視化します。
                         </p>
                         <a href="http://open.shonan.bunkyo.ac.jp/~kawai/">Official Site</a>
                     </div>
@@ -118,7 +118,7 @@
                         </div>
                         <h5 class="mt-4 mb-2">記録</h5>
                         <p>
-                            グラフで可視化する。
+                        グラフで可視化します。
                         </p>
                         <a href="https://github.com/projectd-team14">GitHub Repository</a>
                     </div>
@@ -130,7 +130,7 @@
                         </div>
                         <h5 class="mt-4 mb-2">天気</h5>
                         <p>
-                            外部のAPiから取得。
+                            外部のAPiから取得します。
                         </p>
                         <a href="https://github.com/plateau-system">GitHub Repository</a>
                     </div>
@@ -142,7 +142,7 @@
                         </div>
                         <h5 class="mt-4 mb-2">地図</h5>
                         <p>
-                            Google MapかLeafletで表示。
+                            Google MapかLeafletで表示します。
                         </p>
                     </div>
                 </div>
