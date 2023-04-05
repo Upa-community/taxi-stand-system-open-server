@@ -32,5 +32,6 @@ jobs:
 
      - name: Deploy
        run: |
-         echo "${{ secrets.GIT_PRIVATE_KEY }}" > private_key && chmod 700 private_key
+         echo "${{ secrets.GIT_PRIVATE_KEY }}" > private_key
+         chmod 600 private_key
          ssh -oStrictHostKeyChecking=no ${{ secrets.EC2_USER_NAME }}@${{ secrets.EC2_HOST_NAME }} -i private_key "cd /var/www && git checkout main && git pull origin main && composer install"
