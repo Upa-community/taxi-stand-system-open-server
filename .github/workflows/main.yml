@@ -8,16 +8,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Directory Permissions
-      run: chmod -R 777 storage bootstrap/cache
-
-  deploy:
-    if: github.ref == 'refs/heads/master'
-    needs: laravel-tests
-    runs-on: ubuntu-latest
-    steps:
       - uses: actions/checkout@v2
+      - name: Directory Permissions
+        run: chmod -R 777 storage bootstrap/cache
       - name: Deploy
         env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
