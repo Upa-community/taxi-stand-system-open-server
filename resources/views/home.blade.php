@@ -70,7 +70,7 @@
                 <div class="col-lg-7 mx-auto text-center">
                     <h1 class="display-4 text-white">JamWatch 2023</h1>
                     <p class="text-white my-3">
-                        全国のタクシー乗り場の情報を可視化して</br>利用者数の予測を行います。
+                        全国のタクシー乗り場の情報を可視化して</br>利用者数の予測を行います。</br>このサービスは1時間ごとに更新されます。
                         
                     </p>
                     <a href="" class="btn btn-outline-light m-2">
