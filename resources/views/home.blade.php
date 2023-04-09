@@ -73,7 +73,7 @@
                         全国のタクシー乗り場の情報を可視化して</br>利用者数の予測を行います。</br>このサービスは1時間ごとに更新されます。
                         
                     </p>
-                    <a href="" class="btn btn-outline-light m-2">
+                    <a href="https://github.com/Upa-community" class="btn btn-outline-light m-2">
                         <i class='bx bxl-github icon'></i>
                         GitHub
                     </a>
