@@ -73,7 +73,7 @@
                         全国のタクシー乗り場の情報を可視化して</br>利用者数の予測を行います。</br>このサービスは1時間ごとに更新されます。
                         
                     </p>
-                    <a href="" class="btn btn-outline-light m-2">
+                    <a href="https://github.com/Upa-community" class="btn btn-outline-light m-2">
                         <i class='bx bxl-github icon'></i>
                         GitHub
                     </a>
@@ -86,7 +86,6 @@
         </div>
     </div>
 
-    <!-- Services section -->
     <section>
         <div class="container">
             <div class="row mb-4">
@@ -99,89 +98,16 @@
                 </div>
             </div>
             <div class="row g-4">
-                <div class="col-lg-12 col-sm-6" id="congestion">
-                    <div class="service card-effect">
-                        <div class="iconbox">
-                            <i class='bx bxs-devices'></i>
-                        </div>
-                        <h5 class="mt-4 mb-2">混雑度</h5>
-                        <p>
-                            グラフで可視化します。
-                        </p>
-                        <a href="http://open.shonan.bunkyo.ac.jp/~kawai/">Official Site</a>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-sm-6" id="visualization">
-                    <div class="service card-effect">
-                        <div class="iconbox">
-                            <i class='bx bx-bar-chart-alt-2' ></i>
-                        </div>
-                        <h5 class="mt-4 mb-2">記録</h5>
-                        <p>
-                        グラフで可視化します。
-                        </p>
-                        <a href="https://github.com/projectd-team14">GitHub Repository</a>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-sm-6" id="weather">
-                    <div class="service card-effect">
-                        <div class="iconbox">
-                            <i class='bx bxs-map-pin'></i>
-                        </div>
-                        <h5 class="mt-4 mb-2">天気</h5>
-                        <p>
-                            外部のAPiから取得します。
-                        </p>
-                        <a href="https://github.com/plateau-system">GitHub Repository</a>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-sm-6" id="map">
-                    <div class="service card-effect">
-                        <div class="iconbox">
-                            <i class='bx bx-palette'></i>
-                        </div>
-                        <h5 class="mt-4 mb-2">地図</h5>
-                        <p>
-                            Google MapかLeafletで表示します。
-                        </p>
-                    </div>
-                </div>
+                @include('components/congestion')
+                @include('components/visualization')
+                @include('components/weather')
+                @include('components/map')
             </div>
         </div>
     </section>
 
-    <!-- contact -->
     <section id="contact" class="bg-light">
-        <div class="container">
-            <div class="row mb-4 ">
-                <div class="col-md-8 mx-auto text-center">
-                    <h6 class="title">Contact</h6>
-                    <h1>お問い合わせ</h1>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere
-                        itaque illum quo fugit, molestiae vero.
-                    </p>
-                </div>
-            </div>
-
-            <form action="" class="row g-3 justify-content-center">
-                <div class="col-md-5">
-                    <input type="text" class="form-control" placeholder="Full Name">
-                </div>
-                <div class="col-md-5">
-                    <input type="text" class="form-control" placeholder="Enter E-mail">
-                </div>
-                <div class="col-md-10">
-                    <input type="text" class="form-control" placeholder="Enter Subject">
-                </div>
-                <div class="col-md-10">
-                    <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Enter Message"></textarea>
-                </div>
-                <div class="col-md-10 d-grid">
-                    <button class="btn btn-primary contact">Contact</button>
-                </div>
-            </form>
-        </div>
+        @include('components/contact')
     </section>
 
     <footer>
